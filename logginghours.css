@@ -1,0 +1,614 @@
+
+/*Logging Hours Page*/
+
+
+/*Logging Hours Hero*/
+
+#log-hours-hero {
+    background-color: var(--forest);
+    color: var(--ivory);
+    padding: 75px 8%;
+}
+
+.log-hours-intro {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.log-hours-intro .section-label {
+    color: var(--sand);
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.log-hours-intro h1 {
+    color: var(--ivory);
+    font-size: 48px;
+    line-height: 1.15;
+    margin: 0 0 18px;
+}
+
+.log-hours-intro > p:last-child {
+    color: var(--ivory);
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0;
+}
+
+
+/* =========================================
+   2. MAIN LOGGING LAYOUT
+========================================= */
+
+#logging-section {
+    padding: 75px 30px;
+}
+
+.logging-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr;
+    align-items: start;
+    gap: 30px;
+}
+
+
+/*Logging Form Card*/
+
+.logging-form-card {
+    background-color: var(--white);
+    border: 1px solid #e8e2d8;
+    border-radius: 14px;
+    padding: 38px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.logging-card-heading {
+    margin-bottom: 30px;
+}
+
+.logging-card-heading .section-label {
+    color: var(--terracotta);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+.logging-card-heading h2 {
+    color: var(--forest);
+    font-size: 29px;
+    margin: 0 0 10px;
+}
+
+.logging-card-heading > p:last-child {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Form Fields*/
+
+#hours-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    color: var(--charcoal);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.optional-label {
+    color: #888;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* Input, Select, and Textarea Styling */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+
+    background-color: #faf9f6;
+    color: var(--charcoal);
+
+    border: 1px solid #ded9d0;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+/* Focus Effects */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--forest);
+    box-shadow: 0 0 0 3px rgba(52, 74, 61, 0.12);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+
+/* Date and Hours Side by Side */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+/*Submit Button */
+
+#submit-hours-button {
+    width: 100%;
+    padding: 16px;
+
+    background-color: var(--forest);
+    color: var(--white);
+
+    border: none;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+#submit-hours-button:hover {
+    background-color: var(--terracotta);
+    transform: translateY(-2px);
+}
+
+#submit-hours-button:focus-visible {
+    outline: 3px solid var(--sand);
+    outline-offset: 3px;
+}
+
+.form-disclaimer {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+    margin: -8px 0 0;
+}
+
+
+/*Sidebar*/
+
+.logging-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* Helpful Information Card */
+
+.logging-info-card {
+    background-color: var(--forest);
+    color: var(--ivory);
+    padding: 30px;
+    border-radius: 14px;
+}
+
+.logging-info-card .section-label {
+    color: var(--sand);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.8px;
+    margin: 0 0 14px;
+}
+
+.logging-info-card h2 {
+    color: var(--ivory);
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0 0 12px;
+}
+
+.logging-info-card > p:not(.section-label) {
+    color: var(--ivory);
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.logging-info-card ul {
+    padding-left: 20px;
+    margin: 20px 0 0;
+}
+
+.logging-info-card li {
+    color: var(--ivory);
+    font-size: 16px;
+    line-height: 1.7;
+    padding-left: 4px;
+    margin-bottom: 12px;
+}
+
+.logging-info-card li::marker {
+    color: var(--sand);
+}
+
+
+/* Recent Entries */
+
+.recent-entries-card {
+    background-color: var(--white);
+    border: 1px solid #e8e2d8;
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.recent-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.recent-heading h2 {
+    color: var(--forest);
+    font-size: 20px;
+    margin: 0;
+}
+
+.recent-heading span {
+    color: var(--terracotta);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.empty-entries-message {
+    background-color: var(--ivory);
+    color: #777;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0;
+}
+
+/* Clear Entries Button */
+
+#clear-entries-button {
+    border: 1px solid var(--terracotta);
+    background: transparent;
+    color: var(--terracotta);
+
+    padding: 7px 12px;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#clear-entries-button:hover {
+    background: var(--terracotta);
+    color: var(--ivory);
+}
+
+#clear-entries-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/*Responsive Design*/
+
+@media (max-width: 850px) {
+
+    .logging-layout {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .logging-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #log-hours-hero {
+        padding: 60px 7%;
+    }
+
+    .log-hours-intro h1 {
+        font-size: 36px;
+    }
+
+    #logging-section {
+        padding: 45px 20px;
+    }
+
+    .logging-form-card {
+        padding: 25px 20px;
+    }
+
+    .logging-card-heading h2 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .logging-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+/* Recent Entries */
+
+.recent-entry {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+
+    background-color: var(--forest);
+    color: var(--ivory);
+
+    border: 1px solid var(--forest);
+    border-radius: 12px;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.recent-entry:hover {
+    background-color: #405d4b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(52, 74, 61, 0.18);
+}
+
+.recent-entry-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.recent-entry-info h3 {
+    color: var(--ivory);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.recent-entry-info p {
+    color: #d7dfd7;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.recent-entry-hours {
+    color: #e4c49d;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.recent-entry-arrow {
+    color: #e4c49d;
+    font-size: 19px;
+}
+
+/* Empty Recent Entries Message */
+
+.empty-entries-message {
+    background-color: #eee8dd;
+    color: var(--charcoal);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Entry Details Modal */
+
+.entry-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background: rgba(30, 43, 35, 0.72);
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    backdrop-filter: blur(4px);
+}
+
+.entry-modal-content {
+    position: relative;
+    background: var(--ivory);
+
+    width: 100%;
+    max-width: 540px;
+
+    padding: 42px;
+    border-radius: 18px;
+
+    border-top: 6px solid var(--terracotta);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: entryModalAppear 0.2s ease;
+}
+
+@keyframes entryModalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close Button */
+
+.close-entry-modal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #e9e1d5;
+    color: var(--forest);
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.close-entry-modal:hover {
+    background: #dfc7b4;
+}
+
+/* Popup Heading */
+
+.entry-modal-content .section-label {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.entry-modal-content h2 {
+    color: var(--forest);
+    font-size: 29px;
+    line-height: 1.25;
+    margin: 0 35px 22px 0;
+}
+
+/* Entry Information Tags */
+
+.entry-modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 30px;
+}
+
+.entry-modal-meta span {
+    background: var(--forest);
+    color: var(--ivory);
+
+    padding: 9px 13px;
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Description */
+
+.entry-modal-description {
+    border-top: 1px solid #d8cec0;
+    padding-top: 24px;
+}
+
+.entry-modal-description h3 {
+    color: var(--forest);
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.entry-modal-description p {
+    color: var(--charcoal);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 550px) {
+    .entry-modal-content {
+        padding: 30px 24px;
+    }
+
+    .entry-modal-content h2 {
+        font-size: 24px;
+    }
+
+    .entry-modal-meta {
+        gap: 7px;
+    }
+}
+
+
+
+

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoodHours | Explore Opportunities</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="opportunities.css">
+    <script src="opportunities.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div>
+                <a class="logo" href="index.html">
+                    <span class="forest">good</span><span class="terracotta">hours.</span>
+                </a>
+            </div>
+            
+            <div>
+                <a href="logginghours.html">Log Hours</a>
+                <a href="schedule.html">My Schedule</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+
+
+
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="opportunities-hero">
+            <div class="opportunities-intro">
+                <p class="section-label">EXPLORE</p>
+                <h1>Find your next opportunity here.</h1> 
+                <p> Discover ways to give back, bet involved, and make a difference in your community.</p>
+
+
+            </div>
+
+
+        </section>
+
+        <section id="opportunity-search">
+            <!--User Search and Filter for Opportunities-->
+            <div class="search-container">
+                
+                <svg class="search-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>                                    
+
+                
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search opportunities..."
+                >
+
+
+            </div>
+
+            <div class="filter-container">
+
+                <button class="filter-button active" data-category="all">
+                    All
+                </button>
+                <button class="filter-button " data-category="environment">
+                    Environment
+                </button>
+                <button class="filter-button" data-category="animals">
+                    Animals
+                </button>
+                <button class="filter-button" data-category="health">
+                    Health
+                </button>
+                <button class="filter-button " data-category="education">
+                    Education
+                </button>
+                <button class="filter-button" data-category="community">
+                    Community
+                </button>
+            </div>
+
+
+
+        </section>
+
+        <section id="browse-opportunities">
+            <div class="browse-heading">
+                <div>
+                    <p class="section-label">EXPLORE AND GET INVOLVED</p>
+                    <h2>Browse Events</h2>
+
+                </div>
+
+                <p id="opportunity-count">6 Opportunities</p>
+
+            </div>
+
+            <div class="opportunities-grid">
+                <article class="opportunity-card" data-id="opportunity-1" data-category="environment">
+                    <!--Opportunity 1-->
+                    <img src="Images/parkCleanUp.jpg" alt="Volunteers participating in a community cleanup">
+
+                    <div class="opportunity-info">
+
+                        <p class="opportunity-category">ENVIRONMENT</p>
+
+                        <h3>Community Park Cleanup</h3>
+
+                        <p>Help keep local parks clean and beautifulwhile supporting your community.</p>
+
+                        <div class="opportunity-card-footer">
+
+                            <button class="save-button" aria-label="Save Community Park Cleanup">
+                                ♡ Save
+                            </button>
+
+                            <button class="details-button">
+                                View Details →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="opportunity-card" data-id="opportunity-2" data-category="animals">
+                <!-- Opportunity 2 -->
+                    <img src="Images/animalShelter.jpg" alt="Volunteers helping animals">
+
+                    <div class="opportunity-info">
+
+                        <p class="opportunity-category">ANIMALS</p>
+
+                        <h3>Animal Shelter Assistant</h3>
+
+                        <p> Support your local animal shelter by helping care for animals.
+                        </p>
+
+                        <div class="opportunity-card-footer">
+
+                            <button class="save-button" aria-label="Save Animal Shelter Assistant">
+                                ♡ Save
+                            </button>
+
+                            <button class="details-button">
+                                View Details →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="opportunity-card" data-id="opportunity-3" data-category="education">
+                <!-- Opportunity 3 -->
+
+                    <img src="Images/tutoring.jpg" alt="Student volunteers helping younger students">
+
+                    <div class="opportunity-info">
+
+                        <p class="opportunity-category">EDUCATION</p>
+
+                        <h3>Community Tutoring</h3>
+
+                        <p>Help younger students build confidence and strengthen their academic skills.</p>
+
+                        <div class="opportunity-card-footer">
+
+                            <button class="save-button" aria-label="Save Community Tutoring">
+                                ♡ Save
+                            </button>
+
+                            <button class="details-button">
+                                View Details →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="opportunity-card" data-id="opportunity-4" data-category="environment">
+                    <!--Opportunity 4-->
+                    <img src="Images/treePlanting.jpg" alt="Volunteers planting trees in the community">
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ENVIRONMENT</p>
+                        <h3>Neighborhood Tree Planting</h3>
+                        <p>Help plant trees throughout your local community.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button" aria-label="Save Neighborhood Tree Planting">
+                                ♡ Save
+
+                            </button>
+
+                            <button class="details-button">View Details →</button>
+
+                        </div>
+                    </div>
+
+
+                </article>
+                
+                <article class="opportunity-card" data-id="opportunity-5" data-category="community">
+                    <!--Opportunity 5-->
+                    <img src="Images/foodPantry.jpg" alt="Volunteers organizing food donations">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">COMMUNITY</p>
+                        <h3>Community Food Pantry Volunteer</h3>
+                        <p>Organize food donations and prepare food for those in need.</p>
+                        <div class="opportunity-card-footer">
+                            <button class="save-button" aria-label="Save Community Food Pantry Volunteer">
+                                ♡ Save
+
+                            </button>
+                            <button class="details-button">View Details →</button>
+
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+                <article class="opportunity-card" data-id="opportunity-6" data-category="health">
+                    <!--Opportunity 6-->
+                    <img src="Images/healthFair.jpg" alt="Volunteers assisting at a health fair">
+
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">HEALTH</p>
+                        <h3>Community Health Fair Volunteer</h3>
+                        <p>Help organize communtiy health events and assist guests at booths.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button" aria-label="Save Community Health Fair Volunteer">
+                                ♡ Save
+
+                            </button>
+                            <button class="details-button">View Details →</button>
+
+                        </div>
+
+                    </div>                 
+
+                </article>
+
+                <article class="opportunity-card" data-id="opportunity-7" data-category="environment">
+                    <!--Opportunity 7-->
+                    <img src="Images/beachCleanUp.jpg" alt="Volunteers cleaning a beach">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ENVIRONMENT</p>
+                        <h3>Beach Cleanup Crew</h3>
+                        <p>Help protect coastal wildlife by collecting litter and keeping local beaches clean.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="opportunity-card" data-id="opportunity-8" data-category="environment">
+                    <!--Opportunity 8-->
+                    <img src="Images/gardenAssistance.jpg" alt="Volunteers working in a community garden">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ENVIRONMENT</p>
+                        <h3>Community Garden Assistant</h3>
+                        <p>Help maintain garden beds, care for plants, and support a neighborhood growing space.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="opportunity-card" data-id="opportunity-9" data-category="animals">
+                    <!--Opportunity 9-->  
+                    <img src="Images/animalRescueSupply.jpg" alt="Animal shelter donation supplies">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ANIMALS</p>
+                        <h3>Animal Rescue Supply Drive</h3>
+                        <p>Sort donated pet food, blankets, and supplies for animals in need.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="opportunity-card" data-id="opportunity-10" data-category="animals">
+                    <!--Opportunity 10-->
+                    <img src="Images/petAdoptionEvent.jpg" alt="Volunteers helping at an animal adoption event">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ANIMALS</p>
+                        <h3>Pet Adoption Event Assistant</h3>
+                        <p>Help prepare adoption spaces and welcome visitors at a community pet adoption event.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 11 -->
+                <article class="opportunity-card" data-id="opportunity-11" data-category="education">
+                    <img src="Images/elementaryReadingBuddy.jpg" alt="Student reading with a younger child">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">EDUCATION</p>
+                        <h3>Elementary Reading Buddy</h3>
+                        <p>Encourage younger students to develop reading skills through fun activities and stories.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 12 -->
+                <article class="opportunity-card" data-id="opportunity-12" data-category="education">
+                    <img src="Images/homeworkHelper.jpg" alt="Students working together on homework">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">EDUCATION</p>
+                        <h3>After-School Homework Helper</h3>
+                        <p>Support elementary and middle school students as they work through their assignments.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 13 -->
+                <article class="opportunity-card" data-id="opportunity-13" data-category="community">
+                    <img src="Images/clothingDonation.jpg" alt="Volunteers sorting clothing donations">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">COMMUNITY</p>
+                        <h3>Clothing Donation Organizer</h3>
+                        <p>Sort and organize donated clothing to help local families access essential items.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 14 -->
+                <article class="opportunity-card" data-id="opportunity-14" data-category="community">
+                    <img src="Images/communityFestival.jpg" alt="Volunteers helping at a community festival">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">COMMUNITY</p>
+                        <h3>Community Festival Volunteer</h3>
+                        <p>Help organize event activities, welcome guests, and support festival operations.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 15 -->
+                <article class="opportunity-card" data-id="opportunity-15" data-category="community">
+                    <img src="Images/seniorCenterActivity.jpg" alt="Volunteers assisting at a senior community center">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">COMMUNITY</p>
+                        <h3>Senior Center Activity Assistant</h3>
+                        <p>Help prepare group activities and spend time with members of a local senior center.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 16 -->
+                <article class="opportunity-card" data-id="opportunity-16" data-category="health">
+                    <img src="Images/charityWalkEvent.jpg" alt="Volunteers supporting a charity walk">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">HEALTH</p>
+                        <h3>Charity Walk Event Volunteer</h3>
+                        <p>Help prepare event materials and guide participants during a community charity walk.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 17 -->
+                <article class="opportunity-card" data-id="opportunity-17" data-category="health">
+                    <img src="Images/wellnessFair.jpg" alt="Volunteers assisting at a wellness fair">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">HEALTH</p>
+                        <h3>Wellness Fair Assistant</h3>
+                        <p>Welcome visitors and help organize educational booths at a community wellness fair.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Opportunity 18 -->
+                <article class="opportunity-card" data-id="opportunity-18" data-category="environment">
+                    <img src="Images/recyclingDrive.jpg" alt="Volunteers organizing recyclable materials">
+
+                    <div class="opportunity-info">
+                        <p class="opportunity-category">ENVIRONMENT</p>
+                        <h3>Community Recycling Drive</h3>
+                        <p>Help sort recyclable materials and encourage responsible waste management.</p>
+
+                        <div class="opportunity-card-footer">
+                            <button class="save-button">♡ Save</button>
+                            <button class="details-button">View Details →</button>
+                        </div>
+                    </div>
+                </article>
+
+
+            </div>
+
+
+            <!-- Opportunity Pagination -->
+
+            <div class="pagination-container">
+
+                <p id="pagination-results">
+                    Showing 1–6 of 6 opportunities
+                </p>
+
+                <div class="pagination-controls">
+
+                    <button id="previous-page" aria-label="Previous page">
+                        &larr;
+                    </button>
+
+                    <span id="current-page">1</span>
+
+                    <span class="pagination-divider">of</span>
+
+                    <span id="total-pages">1</span>
+
+                    <button id="next-page" aria-label="Next page">
+                        &rarr;
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section id="saved-opportunities">
+            <!--Saved Opportunities-->
+
+            <div class="saved-heading">
+
+                <p class="section-label">YOUR BOOKMARKS</p>
+
+                <h2>Saved Opportunities</h2>
+
+                <p>Keep track of opportunities you're interested in and come back to them whenever you're ready.
+                </p>
+
+            </div>
+
+            <div id="saved-opportunities-grid" class="opportunities-grid">
+
+                <!-- Saved opportunity cards will appear here using JavaScript -->
+
+            </div>
+
+            <p id="empty-saved-message">You haven't saved any opportunities yet. Explore the opportunities above to find something you're interested in!
+            </p>
+
+        </section>
+
+
+
+        <div id="opportunity-modal" class="modal">
+
+            <div class="modal-content">
+
+                <!-- Close Button -->
+                <button class="close-modal" aria-label="Close details">
+                    &times;
+                </button>
+
+                <!-- Opportunity Image -->
+                <img id="modal-image"
+                    src=""
+                    alt="">
+
+                <!-- Opportunity Information -->
+                <div class="modal-details">
+
+                    <p id="modal-category" class="opportunity-category">ENVIRONMENT
+                    </p>
+
+                    <h2 id="modal-title">Community Park Cleanup</h2>
+
+                    <p id="modal-organization">Organized by Example Organization
+                    </p>
+
+                    <p id="modal-description">Opportunity description will appear here.
+                    </p>
+
+                    <!-- Event Information -->
+                    <div class="modal-information">
+
+                        <p id="modal-date">Date: Sample date</p>
+
+                        <p id="modal-time">Time: Sample time</p>
+
+                        <p id="modal-location">Location: Sample location</p>
+
+                        <p id="modal-age">Age requirement: Sample requirement</p>
+
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="modal-contact">
+
+                        <h3>Contact Information</h3>
+
+                        <p id="modal-contact-info">Contact details will appear here.
+                        </p>
+
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="modal-actions">
+
+                        <button id="modal-save-button">
+                            ♡ Save Opportunity
+                        </button>
+
+                        <button id="add-to-schedule-button">
+                            + Add to My Schedule
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+        <p>© 2026 GoodHours. All rights reserved.</p>
+    </footer>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

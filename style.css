@@ -1,0 +1,427 @@
+/*Color Palette for GoodHours*/
+
+:root {
+    --ivory: #f4efe6;
+    --forest: #344A3D;
+    --terracotta: #A65F43;
+    --sand: #D9B98C;
+    --charcoal: #343A32;
+    --white: #FFFFFF;
+}
+
+*{
+    box-sizing:border-box;
+
+}
+
+body {
+    background-color: var(--ivory);
+    color: var(--charcoal);
+    font-family: 'DM Sans', sans-serif;
+    margin:0;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+
+}
+
+header {
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+    background-color: var(--ivory);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+nav div {
+    display: flex;
+    gap: 30px;
+    margin-top: -12px;
+    margin-bottom: -8px;
+
+}
+
+nav div:first-child {
+    display: block;
+
+}
+
+
+nav a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--terracotta);
+
+}
+
+.logo {
+    color: var(--forest);
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: -1px;
+
+}
+
+.forest {
+    color: var(--forest)
+
+}
+.terracotta {
+    color: var(--terracotta)
+
+}
+
+/*Hero Section*/ 
+
+#hero {
+    text-align: center;
+    padding: 94px 30px ;
+}
+
+#hero h1 {
+    color: var(--forest);
+    font-size: 65px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#hero p {
+    text-align: center;
+    font-size: 21px;
+    line-height: 1.5;
+    max-width: 860px;
+    margin: 0 auto 20px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px 5px;
+    font-size: 15px;
+
+}
+
+
+.button-opportunities {
+    background-color: var(--forest);
+    color: var(--white);
+
+}
+
+.button-log {
+    background-color: var(--forest);
+    color: var(--white);
+    
+}
+
+.button-dashboard {
+    border: 2px solid var(--forest);
+    color: var(--charcoal);
+
+}
+
+.button-opportunities:hover {
+    background-color: var(--terracotta);
+}
+
+.button-log:hover{
+    background-color: var(--terracotta);
+}
+
+.button-dashboard:hover {
+    background-color: var(--terracotta);
+    border: 2px solid var(--terracotta);
+    color: var(--white)
+}
+
+
+/* About Section */
+#about {
+    padding: 40px 10%;
+    background-color: var(--white);
+}
+
+#about h2 {
+    font-size: 50px;
+    color: var(--charcoal);
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 50px;
+}
+
+.about-left-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 26px; 
+}
+
+.section-label {
+    color: var(--terracotta);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.about-heading h2 {
+    color: var(--forest);
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.about-description {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--charcoal);
+}
+
+.about-underline {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;  
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* How it Works Section */
+
+#how-it-works {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section-heading .section-label-HIW {
+    font-size: 20px;
+    font-weight: bold;
+    margin: -14px;
+    margin-top: 10px
+}
+
+.section-heading h2 {
+    color: var(--forest);
+    font-size: 40px;
+    margin-bottom: 14px;
+}
+
+.section-heading > p:last-child {
+    font-size: 16px;
+}
+
+.steps-grid {
+    display: flex;
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.step-card {
+    flex: 1;
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 14px;
+    text-align: left;
+    border: 1px solid #e8e2d8;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-6px);
+}
+
+.step-number {
+    color: var(--terracotta);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.step-card h3 {
+    color: var(--forest);
+    font-size: 27px;
+    margin-top: 25px;
+}
+
+.step-card p {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Call to action/Pathways */
+
+#pathways {
+    padding: 75px 8%;
+    background-color: var(--forest);
+}
+
+/* Section Heading */
+
+.pathways-heading {
+    text-align: center;
+    max-width: 670px;
+    margin: 0 auto 40px;
+}
+
+.pathways-heading .section-label {
+    color: var(--sand);
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+
+.pathways-heading .h2-edit {
+        color: var(--charcoal);
+}
+
+.pathways-heading h2 {
+    color: var(--ivory);
+    font-size: 50px;
+    margin-bottom: 12px;
+}
+
+.pathways-heading > p:last-child {
+    color: var(--ivory);
+    font-size: 40px;
+    line-height: 1.4;
+}
+
+/* Pathway Cards */
+
+.pathways-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+}
+
+.pathway-card {
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+
+/* Student Card */
+
+.student-card {
+    background-color: var(--ivory);
+    color: var(--charcoal);
+}
+
+/* Organization Card */
+
+.organization-card {
+    background-color: var(--white);
+    color: var(--charcoal);
+    border: 1px solid #e8e2d8;
+}
+
+/* Card Text */
+
+.pathway-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--terracotta);
+}
+
+.pathway-card h3 {
+    font-size: 29px;
+    margin: 10px 0;
+}
+
+.pathway-card > p:not(.pathway-label) {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+
+.pathway-button {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+    transition: 0.3s;
+}
+
+.student-button {
+    background-color: var(--forest);
+    color: var(--white);
+}
+
+.student-button:hover {
+    background-color: var(--terracotta);
+    transform: translateY(-6px)
+}
+
+.organization-button {
+    background-color: var(--forest);
+    color: var(--white);
+}
+
+.organization-button:hover {
+    background-color: var(--terracotta);
+    transform: translateY(-6px);
+}
+@media (max-width: 768px) {
+
+    #pathways {
+        padding: 70px 6%;
+    }
+
+    .pathways-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pathways-heading h2 {
+        font-size: 32px;
+    }
+
+    .pathway-card {
+        padding: 30px;
+    }
+
+}
+
+
+

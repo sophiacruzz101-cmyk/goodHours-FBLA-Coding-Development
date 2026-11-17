@@ -1,0 +1,652 @@
+/* Student Dashboard */
+
+
+
+main {
+    width: 100%;
+}
+
+header {
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--ivory); 
+    width: 100%;
+    border-bottom: 1px solid #e8e2d8;
+}
+
+
+#dashboard-welcome,
+#dashboard-content,
+#featured-opportunities {
+    width: 100%;
+}
+
+
+/* Welcome Section*/
+#dashboard-welcome {
+    background-color: var(--forest);
+    color: var(--ivory);
+    padding: 45px 8%;
+}
+
+.welcome-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.welcome-content .section-label {
+    color: var(--sand);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+#dashboard-welcome h1 {
+    font-size: 40px;
+    color: var(--ivory);
+    margin: 0 0 8px;
+    line-height: 1.1;
+}
+
+#dashboard-welcome p:last-child {
+    font-size: 16px;
+    margin: 0;
+    color: var(--ivory);
+}
+
+
+/* Student Progress Section */
+.progress-section-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 ;
+    width:100%
+}
+
+#dashboard-section-heading {
+    margin: 40px 0 20px 0;
+    text-align: left;
+}
+
+#dashboard-section-heading h2 {
+    font-size: 28px;
+    color: var(--forest);
+    margin: 0 0 6px 0;
+}
+
+#dashboard-section-heading p {
+    font-size: 15px;
+    color: var(--charcoal);
+    margin: 0;
+}
+
+
+/* Statistics Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width:100%
+
+}
+
+
+/* Individual Stat Cards */
+.stat-card {
+    background-color: var(--white);
+    border: 1px solid #e8e2d8;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.stat-label {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 0 10px;
+}
+
+.stat-card h3 {
+    color: var(--forest);
+    font-size: 36px;
+    margin: 0 0 8px;
+}
+
+.stat-card > p:last-child {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+
+/* Progress Bar */
+
+.goal-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e9e4db;
+    border-radius: 20px;
+    margin: 14px 0 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 50%;
+    height: 100%;
+    background-color: var(--terracotta);
+    border-radius: 20px;
+}
+
+/* Dashboard Grid Layout Format*/
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.upcoming-card {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.saved-card {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.actions-card {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .upcoming-card,
+    .saved-card,
+    .actions-card {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+
+
+
+/* Dashboard Content */
+#dashboard-content {
+    padding: 40px 30px;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.dashboard-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: var(--white);
+    border: 1px solid #e8e2d8;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.dashboard-card h2 {
+    color: var(--forest);
+    font-size: 20px;
+    margin: 0;
+}
+
+
+
+/* Card Headings */
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-heading a {
+    color: var(--terracotta);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+
+/* Upcoming Events */
+.upcoming-card {
+    grid-row: span 2;
+}
+
+.commitment-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid #eee9e1;
+
+}
+
+.commitment-date {
+    min-width: 55px;
+    height: 60px;
+    background-color: var(--ivory);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.commitment-date span {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: bold;
+
+}
+
+.commitment-date strong {
+    color: var(--forest);
+    font-size: 20px;
+
+}
+
+.commitment.details h3 {
+    color: var(--charcoal);
+    font-size: 15px;
+    margin: 0 0 4px;
+}
+
+.commitment.details p {
+    color: #777;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+
+/* Saved Opportunities */
+.saved-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-content {
+    margin-top: auto;
+}
+
+.saved-content h3 {
+    font-size: 38px;
+    color: var(--terracotta);
+    margin: 5px 0;
+}
+
+.saved-content p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.saved-content a {
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+
+
+/* Quick Actions */
+.actions-card {
+    background-color: var(--forest);
+    color: var(--ivory);
+}
+
+.actions-card h2 {
+    color: var(--ivory);
+    margin-bottom: 15px;
+}
+
+.action-links {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.action-links a {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.09);
+    color: var(--ivory);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s ease;
+
+}
+
+.action-links a:hover {
+    transform: translateX(4px);
+    background-color: var(--terracotta);
+
+}
+
+
+
+/* Featured Opportunities/Carousel */
+#featured-opportunities {
+    background-color: var(--white);
+    padding: 45px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.dashboard-section-heading .section-label {
+    color: var(--terracotta);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.dashboard-section-heading h2 {
+    color: var(--forest);
+    font-size: 32px;
+    margin: 8px 0;
+
+}
+
+.dashboard-section-heading > p:last-child {
+    color: var(--charcoal);
+    font-size: 15px;
+    margin: 0;
+
+}
+
+
+
+/* Carousel Layout */
+.carousel-outer-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.opportunities-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.opportunities-carousel {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.opportunity-card {
+    flex: 0 0 calc(50% - 12.5px);
+    background-color: var(--ivory);
+    border: 1px solid #e8e2d8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.opportunity-card img {
+    display: block;
+    width: 100%;
+    height: 160px; 
+    object-fit: cover;
+
+}
+
+.opportunity-info {
+    padding: 20px;
+
+}
+
+.opportunity-category {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 0 8px;
+
+
+}
+
+.opportunity-info h3 {
+    color: var(--forest);
+    font-size: 20px;
+    margin: 0 0 8px;
+
+}
+
+.opportunity-info > p:not(.opportunity-category) {
+    color: var(--charcoal);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+
+}
+
+.opportunity-info a {
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+
+
+}
+
+
+/* Carousel Control Buttons */
+.carousel-nav-btn {
+    background-color: var(--forest);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+    transition: background-color 0.2s;
+
+
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--terracotta);
+
+}
+
+.prev-btn {
+    margin-right: 15px;
+
+}
+
+.next-btn {
+    margin-left: 15px;
+
+}
+
+/* Explore More */
+.explore-more {
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.explore-more a {
+    display: inline-block;
+    background-color: var(--forest);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+
+}
+
+.explore-more a:hover {
+    background-color: var(--terracotta);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid,
+    .dashboard-grid,
+    .opportunities-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .opportunity-card {
+        flex: 0 0 100%;
+    }
+
+    .carousel-nav-btn {
+        display: none; 
+    }
+
+
+}
+
+/* Goal Settings */
+
+.goal-settings {
+    margin-top: 18px;
+}
+
+.goal-settings label {
+    display: block;
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.goal-input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.goal-input-group input {
+    width: 100%;
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid #d8cec0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.goal-input-group button {
+    border: none;
+    border-radius: 6px;
+    padding: 9px 13px;
+    background-color: var(--forest);
+    color: var(--ivory);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.goal-input-group button:hover {
+    background-color: var(--terracotta);
+}
+
+/* Dashboard Progress Bar */
+
+.progress-fill {
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* Dashboard Empty Messages */
+
+.dashboard-empty-message {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 16px 0;
+}
+
+
+/* Dashboard Saved Opportunities */
+
+.dashboard-saved-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e1d7;
+}
+
+.saved-item-title {
+    color: var(--charcoal);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.saved-item-category {
+    color: var(--terracotta);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.saved-more-message {
+    color: #777;
+    font-size: 12px;
+    margin-top: 10px;
+}

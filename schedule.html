@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoodHours | My Schedule</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="schedule.css">
+    <script src="schedule.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div>
+                <a class="logo" href="index.html">
+                    <span class="forest">good</span><span class="terracotta">hours.</span>
+                </a>
+            </div>
+
+            <div>
+                <a href="opportunities.html">Explore</a>
+                <a href="schedule.html">My Schedule</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="schedule-page">
+
+        <!-- Schedule introduction -->
+        <section id="schedule-hero">
+            <div class="schedule-intro">
+                <span class="section-label">STAY ORGANIZED</span>
+
+                <h1>Your time, organized.</h1>
+
+                <p>Keep track of the opportunities you've saved and see what's coming up. Your volunteer schedule, all in one place.
+                </p>
+            </div>
+        </section>
+
+        <!-- Calendar and upcoming events -->
+        <section id="schedule-section">
+
+            <div class="schedule-layout">
+
+                <!-- Calendar -->
+                <div class="calendar-card">
+
+                    <div class="calendar-heading">
+                        <div>
+                            <span class="calendar-label">YOUR CALENDAR</span>
+                            <h2 id="calendar-week-range">November 9 – November 15</h2>
+                        </div>
+
+                        <div class="calendar-controls">
+                            <button type="button" id="today-button">Today</button>
+
+                            <button type="button" id="previous-week" aria-label="Previous week">
+                                &#10094;
+                            </button>
+
+                            <button type="button" id="next-week" aria-label="Next week">
+                                &#10095;
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                    </div>
+
+                    <div id="calendar-grid" class="calendar-grid"></div>
+
+                    <div class="calendar-legend">
+                        <span class="legend-dot"></span>
+                        <span>Scheduled commitments</span>
+                    </div>
+
+                </div>
+
+                <!-- Upcoming events sidebar -->
+                <aside class="schedule-sidebar">
+
+                    <div class="upcoming-events-card">
+
+                        <div class="upcoming-heading">
+                            <div>
+                                <span class="calendar-label">YOUR COMMITMENTS</span>
+                                <h2>Upcoming Events</h2>
+                            </div>
+
+                            <span id="upcoming-event-count" class="event-count">0</span>
+                        </div>
+
+                    <!-- Empty schedule message -->
+                    <div id="empty-schedule-message">
+                        <div class="empty-calendar-icon">
+                            <span>&#128197;</span>
+                        </div>
+
+                        <h3>Your schedule is empty.</h3>
+
+                        <p>Add opportunities to your schedule from the Explore page and they'll appear here.
+                        </p>
+
+                        <a href="opportunities.html">Explore Opportunities</a>
+                    </div>
+
+                    <div id="upcoming-events-list"></div>
+
+                    </div>
+
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GoodHours. Make your time count.</p>
+    </footer>
+
+</body>
+
+</html>

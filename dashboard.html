@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoodHours | Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <script src="dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Navigation Bar-->
+        <nav>
+            <div>
+                <a class="logo" href="index.html"><span class="forest">good</span><span class="terracotta">hours.</span></a>
+            </div>
+
+            <div>
+                <a href="opportunities.html">Explore</a>
+                <a href="logginghours.html">Log Hours</a>
+                <a href="schedule.html">My Schedule</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <!--Main Dashboard Section-->
+        <section id="dashboard-welcome">
+            <div class="welcome-content">
+                <p class="section-label">STUDENT DASHBOARD</p>
+                <h1>Welcome!</h1>
+                <p> Here's an overview of your volunteering activity.</p>
+
+            </div>
+
+        </section>
+
+
+        <!--Hours Section-->
+        <section class="progress-section-wrapper">
+            <div class="dashboard-section-heading" id="dashboard-section-heading"> 
+                <h2>Your Progress</h2>
+                <p>Keep track of the difference you're making.</p>
+            </div>
+
+            <div class="stats-grid">
+                <!--Total Hours Card-->
+                <article class="stat-card hours-card">
+                    <p class="stat-label">TOTAL HOURS</p>
+                    <h3 id="total-hours">0</h3>
+                    <p>Volunteer hours completed</p>
+                </article>
+
+                <!--Volunteer Goal Card-->
+                <article class="stat-card goal-card">
+                    <p class="stat-label">YOUR GOAL</p>
+
+                    <h3 id="goal-percentage">0%</h3>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+
+                    <p id="goal-progress-text">0 of 85 hours completed</p>
+
+                    <div class="goal-settings">
+                        <label for="goal-input">Change your hour goal</label>
+
+                        <div class="goal-input-group">
+                            <input
+                                type="number"
+                                id="goal-input"
+                                min="1"
+                                max="10000"
+                                step="1"
+                                value="85"
+                            >
+
+                            <button type="button" id="save-goal-button">
+                                Save Goal
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+        </section>
+
+        <section id="dashboard-content">
+            <!--Main Dashboard Content-->
+            <div class="dashboard-grid">
+
+                <article class="dashboard-card upcoming-card">
+                    <!--Upcoming-->
+                    <div class="card-heading">
+                        <h2>Upcoming Events!</h2>
+                        <a href="schedule.html">View My Schedule</a>
+                    </div>
+                    
+                    <div id="dashboard-upcoming-events">
+                        <p class="dashboard-empty-message">You don't have any upcoming volunteer events. Explore opportunities to get started!</p>
+                    </div>
+
+                </article>
+
+                <article class="dashboard-card saved-card">
+                    <!--Saved Opportunities-->
+                    <div class="card-heading">
+                        <h2>Saved Opportunities</h2>
+                    </div>
+
+                    <div class="saved-content">
+
+                        <h3 id="saved-opportunities-count">0</h3>
+                        <p>Opportunities you've bookmarked for later.</p>
+
+                        <div id="dashboard-saved-opportunities">
+                            <p class="dashboard-empty-message">You haven't saved any opportunities yet.</p>
+                        </div>
+
+                        <a href="opportunities.html#saved-opportunities">View Saved →</a>
+
+                    </div>
+
+                </article>
+            
+
+                <article class="dashboard-card actions-card">
+                    <h2>Quick Actions</h2>
+                    <div class="action-links">
+                        <a href="opportunities.html">Explore Opportunities →</a>
+                        <a href="logginghours.html">Log Volunteer Hours →</a>
+                        <a href="schedule.html">Manage My Schedule →</a>
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+
+        </section>
+
+        <section id="featured-opportunities">
+
+        <div class="dashboard-section-heading">
+            <p class="section-label">DISCOVER SOMETHING NEW</p>
+            <h2>Featured Opportunities</h2>
+            <p>Find your next way to make a difference.</p>
+
+        </div>
+
+<!-- Rotating Carousel Container -->
+            <div class="carousel-outer-wrapper">
+                <button class="carousel-nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+
+                <div class="opportunities-carousel-container">
+                    <div class="opportunities-carousel" id="carouselTrack">
+                        <!-- Opportunity 1: Community Park Cleanup -->
+                        <article class="opportunity-card" data-id="opportunity-1">
+                            <img src="Images/volunteerCleanUp.jpeg"
+                                alt="Community volunteers cleaning up a park">
+                            <div class="opportunity-info">
+                                <p class="opportunity-category">ENVIRONMENT</p>
+                                <h3>Community Park Cleanup</h3>
+                                <p>Help keep local parks clean and beautiful while supporting your community.</p>
+                                <a href="opportunities.html#opportunity-1">
+                                    View Opportunity →
+                                </a>
+                            </div>
+
+                        </article>
+
+                        <!-- Opportunity 2: Animal Shelter Assistant -->
+                        <article class="opportunity-card" data-id="opportunity-2">
+                            <img src="Images/volunteerCleanUp.jpeg"
+                                alt="Volunteers helping animals at a shelter">
+
+                            <div class="opportunity-info">
+                                <p class="opportunity-category">ANIMALS</p>
+                                <h3>Animal Shelter Assistant</h3>
+                                <p>Support your local animal shelter by helping care for animals.</p>
+                                <a href="opportunities.html#opportunity-2">
+                                    View Opportunity →
+                                </a>
+                            </div>
+
+                        </article>
+
+                        <!-- Opportunity 3: Community Tutoring -->
+                        <article class="opportunity-card" data-id="opportunity-3">
+                            <img src="Images/volunteerCleanUp.jpeg"
+                                alt="Volunteers helping students with schoolwork">
+
+                            <div class="opportunity-info">
+
+                                <p class="opportunity-category">EDUCATION</p>
+
+                                <h3>Community Tutoring</h3>
+
+                                <p>Help younger students build confidence and strengthen their academic skills.</p>
+
+                                <a href="opportunities.html#opportunity-3">
+                                    View Opportunity →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+                </div>
+
+                <button class="carousel-nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+
+            <div class="explore-more">
+                <a href="opportunities.html">Explore All Opportunities →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 GoodHours. All rights reserved.</p>
+    </footer>
+
+    <!-- Carousel Rotation Script -->
+    <script>
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.opportunity-card');
+            const totalCards = cards.length;
+            
+            // Show 2 cards at a time side-by-side
+            const maxIndex = Math.max(0, totalCards - 2);
+            
+            currentSlide += direction;
+            if (currentSlide > maxIndex) {
+                currentSlide = 0; // Loop back to start
+            } else if (currentSlide < 0) {
+                currentSlide = maxIndex; // Loop to end
+            }
+
+            const cardWidth = cards[0].getBoundingClientRect().width + 25; // width + gap
+            track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        }
+
+        // Auto rotate every 5 seconds
+        setInterval(() => {
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.opportunity-card');
+            const maxIndex = Math.max(0, cards.length - 2);
+            
+            currentSlide++;
+            if (currentSlide > maxIndex) currentSlide = 0;
+
+            const cardWidth = cards[0].getBoundingClientRect().width + 25;
+            track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        }, 5000);
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

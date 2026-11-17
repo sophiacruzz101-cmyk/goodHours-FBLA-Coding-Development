@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoodHours | Log Volunteer Hours</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logginghours.css">
+    <script src="logginghours.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div>
+                <a class="logo" href="index.html">
+                    <span class="forest">good</span><span class="terracotta">hours.</span>
+                </a>
+            </div>
+
+            <div>
+                <a href="opportunities.html">Explore</a>
+                <a href="schedule.html">My Schedule</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="log-hours-page">
+
+        <!-- Page Introduction -->
+        <section id="log-hours-hero">
+
+            <div class="log-hours-intro">
+
+                <p class="section-label">TRACK YOUR IMPACT</p>
+
+                <h1>Every hour makes a difference.</h1>
+
+                <p>Keep your volunteer experience organized. Record your completed hours and keep track of the time you've given back to your community.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Main Logging Section -->
+        <section id="logging-section">
+
+            <div class="logging-layout">
+
+                <!-- Hours Form -->
+                <div class="logging-form-card">
+
+                    <div class="logging-card-heading">
+                        <p class="section-label">NEW ENTRY</p>
+                        <h2>Log Volunteer Hours</h2>
+                        <p>Enter the details of your volunteer experience below.</p>
+                    </div>
+
+
+                    <form id="hours-form">
+
+                        <!-- Organization -->
+                        <div class="form-group">
+                            <label for="organization">Organization Name</label>
+
+                            <input
+                                type="text"
+                                id="organization"
+                                name="organization"
+                                placeholder="e.g. Local Food Bank"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Activity -->
+                        <div class="form-group">
+                            <label for="activity">Volunteer Activity</label>
+
+                            <select id="activity" name="activity" required>
+                                <option value="" disabled selected>
+                                    Select an activity
+                                </option>
+
+                                <option value="Environment">Environment</option>
+                                <option value="Animals">Animals</option>
+                                <option value="Education">Education</option>
+                                <option value="Health">Health</option>
+                                <option value="Community">Community</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Date and Hours -->
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="volunteer-date">Date Completed</label>
+
+                                <input
+                                    type="date"
+                                    id="volunteer-date"
+                                    name="volunteer-date"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="volunteer-hours">Hours Completed</label>
+
+                                <input
+                                    type="number"
+                                    id="volunteer-hours"
+                                    name="volunteer-hours"
+                                    placeholder="e.g. 3.5"
+                                    min="0.25"
+                                    max="24"
+                                    step="0.25"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="activity-description">
+                                Description
+                                <span class="optional-label">(Optional)</span>
+                            </label>
+
+                            <textarea id="activity-description" name="activity-description" rows="4" placeholder="Briefly describe what you did and what you learned..."
+                            ></textarea>
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-hours-button">
+                            Submit Volunteer Hours →
+                        </button>
+
+                        <p class="form-disclaimer">Remember to keep any required verification from your volunteer organization.
+                        </p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Sidebar -->
+                <aside class="logging-sidebar">
+
+                    <!-- Helpful Reminders -->
+                    <article class="logging-info-card">
+
+                        <p class="section-label">BEFORE YOU LOG</p>
+
+                        <h2>Keep your records accurate.</h2>
+
+                        <p>A few details can make keeping track of your community service much easier.
+                        </p>
+
+                        <ul>
+                            <li>Enter the correct date of your service.</li>
+                            <li>Record the actual hours you completed.</li>
+                            <li>Use the organization's official name.</li>
+                            <li>Keep verification of your service when required.</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Recent Entries -->
+                    <article class="recent-entries-card">
+
+                        <div class="recent-heading">
+                            <h2>Recent Entries</h2>
+
+                            <button type="button" id="clear-entries-button">
+                                Clear Entries
+                            </button>
+                        </div>
+
+                        <div id="recent-entries-list">
+
+                            <p class="empty-entries-message">Your logged volunteer hours will appear here. Start by submitting your first entry!
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+    </main>
+    <!-- Volunteer Entry Details Modal -->
+
+    <div id="entry-details-modal" class="entry-modal">
+
+        <div class="entry-modal-content">
+
+            <button type="button" id="close-entry-modal" class="close-entry-modal">
+                &times;
+            </button>
+
+            <p class="section-label">VOLUNTEER RECORD</p>
+
+            <h2 id="entry-modal-organization"></h2>
+
+            <div class="entry-modal-meta">
+                <span id="entry-modal-date"></span>
+                <span id="entry-modal-activity"></span>
+                <span id="entry-modal-hours"></span>
+            </div>
+
+            <div class="entry-modal-description">
+                <h3>Activity Description</h3>
+                <p id="entry-modal-description"></p>
+            </div>
+
+        </div>
+
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 GoodHours. All rights reserved.</p>
+    </footer>
+
+
+</body>
+</html>

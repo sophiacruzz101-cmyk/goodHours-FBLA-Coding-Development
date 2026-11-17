@@ -7,6 +7,7 @@ const hoursStorageKey = "goodhours_hourEntries";
 const goalStorageKey = "goodhours_hourGoal";
 const scheduleStorageKey = "goodhours_commitments";
 const savedStorageKey = "goodhours_savedOpportunities";
+const totalHoursStorageKey = "goodhours_totalHours";
 
 
 /* Retrieve Saved Information */
@@ -20,16 +21,30 @@ let hourGoal = Number(
 );
 
 
+/* Initialize Permanent Hours Total */
+
+if (localStorage.getItem(totalHoursStorageKey) === null) {
+
+    const startingTotal = volunteerEntries.reduce((sum, entry) => {
+        return sum + Number(entry.hours || 0);
+    }, 0);
+
+    localStorage.setItem(
+        totalHoursStorageKey,
+        startingTotal
+    );
+
+}
+
 /* 1. VOLUNTEER HOURS */
 
 function calculateTotalHours() {
 
-    // Add together the hours from every volunteer entry.
-    const total = volunteerEntries.reduce((sum, entry) => {
-        return sum + Number(entry.hours || 0);
-    }, 0);
+    // Retrieve the permanent accumulated volunteer hours.
+    return Number(
+        localStorage.getItem(totalHoursStorageKey) || 0
+    );
 
-    return total;
 }
 
 
@@ -62,6 +77,55 @@ function updateProgressDisplay() {
         `${Number(totalHours.toFixed(2))} of ${hourGoal} hours completed`;
 
 }
+
+/* 2. CORRECT ACCUMULATED VOLUNTEER HOURS */
+
+const correctHoursButton = document.getElementById("correct-hours-button");
+const correctHoursForm = document.getElementById("correct-hours-form");
+const correctHoursInput = document.getElementById("correct-hours-input");
+const saveCorrectedHoursButton = document.getElementById("save-corrected-hours");
+const cancelCorrectedHoursButton = document.getElementById("cancel-corrected-hours");
+const correctHoursError = document.getElementById("correct-hours-error");
+
+/* Open Correction Form */
+correctHoursButton.addEventListener("click", function () {
+    correctHoursForm.hidden = false;
+
+    correctHoursInput.value = calculateTotalHours();
+
+    correctHoursError.textContent = "";
+});
+
+/* Save Corrected Total */
+saveCorrectedHoursButton.addEventListener("click", function () {
+    const correctedTotal = Number(correctHoursInput.value);
+
+    if (
+        correctHoursInput.value.trim() === "" ||
+        !Number.isFinite(correctedTotal) ||
+        correctedTotal < 0 ||
+        correctedTotal > 1000000
+    ) {
+        correctHoursError.textContent =
+            "Please enter a valid total between 0 and 1,000,000 hours.";
+        return;
+    }
+
+    localStorage.setItem(totalHoursStorageKey, correctedTotal);
+
+    updateProgressDisplay();
+
+    correctHoursForm.hidden = true;
+    correctHoursError.textContent = "";
+
+    alert("Your accumulated volunteer hours have been corrected!");
+});
+
+/* Cancel Correction */
+cancelCorrectedHoursButton.addEventListener("click", function () {
+    correctHoursForm.hidden = true;
+    correctHoursError.textContent = "";
+});
 
 
 /* 3. CUSTOMIZABLE VOLUNTEER GOAL */
@@ -318,11 +382,7 @@ function escapeHTML(value) {
 
 window.addEventListener("storage", function(event) {
 
-    if (event.key === hoursStorageKey) {
-        volunteerEntries = JSON.parse(
-            localStorage.getItem(hoursStorageKey) || "[]"
-        );
-
+    if (event.key === totalHoursStorageKey) {
         updateProgressDisplay();
     }
 

@@ -121,7 +121,92 @@ header {
     margin: 0;
 }
 
+/* Correct Accumulated Hours */
 
+.correct-hours-section {
+    margin-top: 10px;
+}
+
+.correct-hours-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--terracotta);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.correct-hours-button:hover {
+    color: var(--forest);
+}
+
+#correct-hours-form {
+    margin-top: 12px;
+    padding: 15px;
+    background-color: var(--ivory);
+    border: 1px solid #e8e2d8;
+    border-radius: 8px;
+}
+
+#correct-hours-form[hidden] {
+    display: none;
+}
+
+#correct-hours-form label {
+    display: block;
+    color: var(--charcoal);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#correct-hours-input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #d8cec0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.correct-hours-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.correct-hours-actions button {
+    border: none;
+    border-radius: 6px;
+    padding: 9px 13px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#save-corrected-hours {
+    background-color: var(--forest);
+    color: var(--ivory);
+}
+
+#save-corrected-hours:hover {
+    background-color: var(--terracotta);
+}
+
+#cancel-corrected-hours {
+    background-color: #e8e2d8;
+    color: var(--charcoal);
+}
+
+#correct-hours-error {
+    color: #c0392b;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
 
 /* Progress Bar */
 

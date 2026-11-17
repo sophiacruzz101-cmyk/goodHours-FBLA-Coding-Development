@@ -15,6 +15,50 @@ let volunteerEntries = JSON.parse(
     localStorage.getItem(hoursStorageKey) || "[]"
 );
 
+
+/* Permanent Volunteer Hours Total */
+
+const totalHoursStorageKey = "goodhours_totalHours";
+
+
+function getPermanentTotal() {
+
+    const savedTotal = localStorage.getItem(totalHoursStorageKey);
+
+    if (savedTotal !== null) {
+        return Number(savedTotal);
+    }
+
+    const startingTotal = volunteerEntries.reduce((sum, entry) => {
+        return sum + Number(entry.hours || 0);
+    }, 0);
+
+    localStorage.setItem(
+        totalHoursStorageKey,
+        startingTotal
+    );
+
+    return startingTotal;
+}
+
+
+getPermanentTotal();
+
+
+
+function addToPermanentTotal(hours) {
+
+    const currentTotal = getPermanentTotal();
+
+    const updatedTotal = currentTotal + hours;
+
+    localStorage.setItem(
+        totalHoursStorageKey,
+        updatedTotal
+    );
+
+}
+
 /* Save Entries */
 
 function saveVolunteerEntries() {
@@ -202,10 +246,12 @@ hoursForm.addEventListener("submit", function (event) {
 
     volunteerEntries.push(newEntry);
 
+    // Update the permanent accumulated hours.
+    addToPermanentTotal(hours);
+
     saveVolunteerEntries();
     displayRecentEntries();
 
-    // Reset the form after a successful submission.
     hoursForm.reset();
 
     alert("Your volunteer hours have been saved!");
